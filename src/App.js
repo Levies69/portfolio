@@ -1,5 +1,3 @@
-// App.js
-
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Card from './Card';
@@ -77,9 +75,7 @@ function App() {
 
         {/* Content section */}
         <div className='mt-4 flex justify-center'>
-          <div className="w-full mx-5">
             <Card content={content} />
-          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,3 @@
-// Card.jsx
-
 import React from 'react';
 import { useTheme } from './ThemeContext'; // Adjust the path as per your project structure
 import ContactForm from './Contactform'; // Corrected import path
@@ -8,9 +6,8 @@ function Card({ content }) {
   const { darkMode } = useTheme(); // Retrieve darkMode state from context
 
   return (
-    <div className={`relative bg-blue-700 text-white p-20 m-5 text-xl font-sans mx-auto rounded-lg
+    <div className={`relative bg-blue-700 text-white p-12 m-36 text-xl font-sans mx-auto rounded-lg
       sm:w-full lg:w-1/2 ${darkMode ? 'dark:bg-gray-900' : ''}`}>
-      {/* Gradient background */}
       <div className="absolute inset-0 rounded-lg"
            style={{
              backgroundImage: `linear-gradient(to bottom right, rgba(59, 130, 246, 1), rgba(61, 58, 62, 1))`,
@@ -68,7 +65,7 @@ function Card({ content }) {
       )}
 
       {content === 'Spotify' && (
-        <div className="flex flex-col items-center relative z-10">
+        <div className="flex flex-col items-center mb-5 h-auto  z-10">
           <h2 className={`text-center font-bold pb-5 ${darkMode ? 'dark:text-white' : ''}`}>Spotify Playlists</h2>
           <p className={`break-words text-center ${darkMode ? 'dark:text-gray-300' : ''}`}>Hier heb ik mijn spotify playlist staan waar ik vaak en graag naar luister. Neem zeker even een kijkje en wie weet zit je favoriete artiest er tussen🤷‍♂️.</p>
           <div className="w-full">
@@ -76,32 +73,25 @@ function Card({ content }) {
               title="Spotify Playlist"
               src="https://open.spotify.com/embed/playlist/6zb0jy460tm13Pi9E4WmaR?utm_source=generator&theme=0"
               width="100%"
-              height="800" // Increased height to 300px
-              style={{ borderRadius: '12px', marginBottom: '-5px', border: 'none' }} /* Adjust the marginBottom */
+              height="500"
+              style={{ borderRadius: '12px', border: 'none' }}
               allowFullScreen
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             ></iframe>
-            <br />
-            <br />
-          
           </div>
         </div>
       )}
 
       {content === 'Contact' && (
-        <div className="flex flex-col items-center relative h-auto z-10">
+        <div className="flex flex-col items-center relative z-10">
           <h2 className={`text-center font-bold pb-5 ${darkMode ? 'dark:text-white' : ''}`}>Contact</h2>
           <p className={`break-words text-center ${darkMode ? 'dark:text-gray-300' : ''}`}>Geïnteresseerd geraakt? Neem dan contact met mij op via dit contact formulier:</p>
-          <br />
-          <br />
-          <div className='w-full h-auto'>
+          <div className='w-full  mt-4'>
             <ContactForm />
           </div>
-          <br />
-          <p className={`break-words text-center ${darkMode ? 'dark:text-gray-300' : ''}`}>📲 Whatsapp: 06-15640140</p>
-          <br />
-          <a href="mailto:levikleijnenberg@icloud.com" className={`break-words text-center text-white hover:underline ${darkMode ? 'dark:text-gray-300' : ''}`}>✉ Email: levikleijnenberg@icloud.com</a>
+          <p className={`break-words text-center mt-4 ${darkMode ? 'dark:text-gray-300' : ''}`}>📲 Whatsapp: 06-15640140</p>
+          <a href="mailto:levikleijnenberg@icloud.com" className={`break-words text-center text-white hover:underline mt-2 ${darkMode ? 'dark:text-gray-300' : ''}`}>✉ Email: levikleijnenberg@icloud.com</a>
         </div>
       )}
     </div>
