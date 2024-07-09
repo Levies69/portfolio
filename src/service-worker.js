@@ -1,8 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import { precacheAndRoute } from 'workbox-precaching';
 
-// Initialize self.__WB_MANIFEST if not already defined
-self.__WB_MANIFEST = self.__WB_MANIFEST || [];
+
 
 // Precache routes using Workbox
 precacheAndRoute(self.__WB_MANIFEST);
