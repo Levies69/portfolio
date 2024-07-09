@@ -1,4 +1,14 @@
 /* eslint-disable no-restricted-globals */
+// Import necessary Workbox modules
+import { precacheAndRoute } from 'workbox-precaching';
+
+// Initialize self.__WB_MANIFEST if not already defined
+self.__WB_MANIFEST = [].concat(self.__WB_MANIFEST || []);
+
+// Precache routes using Workbox
+precacheAndRoute(self.__WB_MANIFEST);
+
+// Other service worker configurations and caching strategies can follow here
 self.addEventListener('install', (event) => {
     event.waitUntil(
       caches.open('static-v1').then((cache) => {
@@ -21,9 +31,6 @@ self.addEventListener('install', (event) => {
       })
     );
   });
-  import { precacheAndRoute } from 'workbox-precaching';
 
-self.__WB_MANIFEST = [].concat(self.__WB_MANIFEST || []);
 
-precacheAndRoute(self.__WB_MANIFEST);
 
