@@ -21,4 +21,9 @@ self.addEventListener('install', (event) => {
       })
     );
   });
-  
+  import { precacheAndRoute } from 'workbox-precaching';
+
+self.__WB_MANIFEST = [].concat(self.__WB_MANIFEST || []);
+
+precacheAndRoute(self.__WB_MANIFEST);
+
