@@ -71,12 +71,14 @@ function App() {
 
       {/* Introduction Section */}
       <div className="flex flex-col md:flex-row items-center text-center md:text-left py-16 md:py-24 px-6 md:px-12 mt-16">
-        {/* Introduction Text */}
-        <div className="md:w-1/2">
-          <h1 className={`text-7xl font-bold ${darkMode ? 'text-white' : 'text-black'} transition-colors duration-300 font-sans`}>
-            Hey👋, my name is <span className={`text-7xl font-bold ${darkMode ? 'text-purple-800' : 'text-green-700'} transition-colors duration-300`}>Levi Kleijnenberg</span> and I am a <span className={`${currentColor} transition-opacity duration-500 ${fadeClass}`}>{currentText}</span>.
-          </h1>
-        </div>
+  {/* Introduction Text */}
+  <div className="md:w-1/2 mx-3">
+    <h1 className={`text-5xl md:text-7xl font-bold ${darkMode ? 'text-white' : 'text-black'} transition-colors duration-300 font-sans`}>
+      Hey👋, my name is <span className={`text-5xl md:text-7xl font-bold ${darkMode ? 'text-purple-800' : 'text-green-700'} transition-colors duration-300`}>Levi Kleijnenberg</span> and I am a <span className={`${currentColor} transition-opacity duration-500 ${fadeClass}`}>{currentText}</span>
+    </h1>
+  </div>
+
+
         
         {/* Profile Image */}
         <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
