@@ -17,7 +17,6 @@ export default function Lifeline() {
   const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div className={`py-16 ${darkMode ? '' : 'bg-white'} transition-colors duration-300`}>

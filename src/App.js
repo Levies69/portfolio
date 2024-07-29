@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 import DarkModeToggle from './DarkModeToggle';
 import { useTheme } from './ThemeContext'; // Adjust the path as per your project structure
@@ -41,8 +41,8 @@ function App() {
     });
   }, []);
 
-  const texts = ['Software Developer', 'Web Developer', 'Life Enjoyer'];
-  const colors = ['text-red-600', 'text-blue-600', 'text-yellow-600'];
+  const texts = useMemo(() => ['Software Developer', 'Web Developer', 'Life Enjoyer'], []);
+  const colors = useMemo(() => ['text-red-600', 'text-blue-600', 'text-yellow-600'], []);
   const [currentText, setCurrentText] = useState(texts[0]);
   const [currentColor, setCurrentColor] = useState(colors[0]);
   const [fadeClass, setFadeClass] = useState('');
@@ -60,7 +60,7 @@ function App() {
     }, 2500); // Change text every 3 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [texts, colors]); // Added texts and colors to dependency array
+  }, [texts, colors]); // Dependency array remains the same
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gradient-to-b from-gray-800 to-gray-900' : 'bg-white'} transition-colors duration-300`}>
