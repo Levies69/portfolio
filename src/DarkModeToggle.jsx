@@ -10,12 +10,12 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      className="bg-gray-300 dark:bg-gray-700 rounded-full p-2 w-12 h-12 flex items-center justify-center"
+      className="fixed top-4 right-4 bg-gray-300 dark:bg-gray-700 rounded-full p-2 w-12 h-12 flex items-center justify-center z-50"
       onClick={toggleDarkMode}
     >
       <FontAwesomeIcon
         icon={darkMode ? faSun : faMoon}
-        className="text-gray-700 dark:text-gray-300 text-xl"
+        className="text-gray-700 dark:text-gray-300 text-2xl"
       />
     </button>
   );

@@ -46,14 +46,14 @@ function ContactForm() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className={`max-w-lg h-auto mx-auto p-6 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-md rounded`}
+        className={`max-w-lg h-auto  mx-auto my-5 p-6 ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} shadow-xl rounded-md  `}
         style={{ marginBottom: '0' }} // Ensure no margin at the bottom
       >
-        <h2 className={`text-2xl ${darkMode ? 'text-white' : 'text-gray-700'} font-bold mb-4`}>Contact Formulier</h2>
+        <h2 className={`text-2xl ${darkMode ? 'text-white' : 'text-gray-700'} font-bold mb-4`}>Contact Form</h2>
         {status && <p className={`${darkMode ? 'text-white' : 'text-gray-700'}`}>{status}</p>}
         <div className="mb-4">
           <label className={`block ${darkMode ? 'text-white' : 'text-gray-700'} text-sm font-bold mb-2 `} htmlFor="name">
-            Naam
+            Name
           </label>
           <input
             type="text"
@@ -67,7 +67,7 @@ function ContactForm() {
         </div>
         <div className="mb-4">
           <label className={`block ${darkMode ? 'text-white' : 'text-gray-700'} text-sm font-bold mb-2`} htmlFor="email">
-            E-mail
+            Email
           </label>
           <input
             type="email"
@@ -81,7 +81,7 @@ function ContactForm() {
         </div>
         <div className="mb-4">
           <label className={`block ${darkMode ? 'text-white' : 'text-gray-700'} text-sm font-bold mb-2`} htmlFor="message">
-            Bericht
+            Message
           </label>
           <textarea
             id="message"
@@ -94,7 +94,7 @@ function ContactForm() {
           />
         </div>
         <button type="submit" className={`bg-blue-500 ${darkMode ? 'text-white' : 'text-gray-100'} w-full  py-10 rounded hover:bg-blue-700`}>
-          Stuur
+          <p className='text-white w-full font-bold mb-2'>Submit</p>
         </button>
       </form>
       
