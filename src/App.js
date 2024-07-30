@@ -12,6 +12,7 @@ import Lifeline from './Lifeline';
 import Footer from './Footer';
 
 function Modal({ show, onClose, content }) {
+  const { darkMode } = useTheme(); // Access the dark mode state
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -36,9 +37,9 @@ function Modal({ show, onClose, content }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div
         ref={modalRef}
-        className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full"
+        className={`p-8 rounded-lg shadow-lg max-w-lg w-full transition-colors duration-300 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
       >
-        <button className="text-black dark:text-white" onClick={onClose}>Close</button>
+        <button className="text-black font-bold dark:text-white" onClick={onClose}>close</button>
         <div className="mt-4">
           {content}
         </div>
@@ -76,7 +77,8 @@ function App() {
       easing: 'ease-in-out',
       opacity: 0,
     });
-  }, []);
+  }, []); // No dependencies needed
+  ;
 
   const texts = ['Software Developer', 'Web Developer', 'Life Enjoyer'];
   const colors = ['text-red-600', 'text-blue-600', 'text-yellow-600'];
@@ -95,9 +97,9 @@ function App() {
         setFadeClass('opacity-100'); // Start fading in
       }, 500); // Time to fade out
     }, 2500); // Change text every 3 seconds
-
+  
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [texts, colors]); // Include texts and colors if they are dynamic
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} transition-colors duration-300`}>
@@ -108,7 +110,7 @@ function App() {
 
       {/* Introduction Section */}
       <div className="flex flex-col md:flex-row items-center text-center md:text-left py-16 md:py-24 px-6 md:px-12 mt-16">
-        {/* Introduction Text */}
+          {/* Introduction Text */}
         <div className="md:w-1/2 mx-3">
           <h1 className={`text-5xl md:text-7xl font-bold ${darkMode ? 'text-white' : 'text-black'} transition-colors duration-300 font-sans`}>
             Hey👋, my name is <span className={`text-5xl md:text-7xl font-bold ${darkMode ? 'text-purple-800' : 'text-green-700'} transition-colors duration-300`}>Levi Kleijnenberg</span> and I am a <span className={`${currentColor} transition-opacity duration-500 ${fadeClass}`}>{currentText}</span>.
