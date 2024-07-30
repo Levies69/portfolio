@@ -49,6 +49,9 @@ function Modal({ show, onClose, content }) {
 }
 
 
+const texts = ['Software Developer', 'Web Developer', 'Life Enjoyer'];
+const colors = ['text-red-600', 'text-blue-600', 'text-yellow-600'];
+
 function App() {
   const { darkMode } = useTheme();
   const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -80,8 +83,6 @@ function App() {
   }, []); // No dependencies needed
   ;
 
-  const texts = ['Software Developer', 'Web Developer', 'Life Enjoyer'];
-  const colors = ['text-red-600', 'text-blue-600', 'text-yellow-600'];
   const [currentText, setCurrentText] = useState(texts[0]);
   const [currentColor, setCurrentColor] = useState(colors[0]);
   const [fadeClass, setFadeClass] = useState('');
