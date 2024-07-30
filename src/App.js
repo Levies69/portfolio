@@ -73,7 +73,7 @@ function App() {
   useEffect(() => {
     ScrollReveal().reveal('.reveal', {
       origin: 'bottom',
-      distance: '20px',
+      distance: '60px',
       duration: 1000,
       delay: 200,
       easing: 'ease-in-out',
@@ -127,7 +127,7 @@ function App() {
       </div>
 
       {/* Experiences Section */}
-      <div className="px-6 md:px-12 py-16 md:py-40">
+      <div className="px-6 md:px-12 py-16 md:py-40 reveal">
         <h2 className={`text-4xl mb-8 ${darkMode ? 'text-white' : 'text-black'} transition-colors ease-in-out font-sans duration-300`}>
           Experiences
         </h2>
@@ -186,8 +186,8 @@ function App() {
                 <p className="text-lg font-sans">
                   <span className='font-bold'>In</span> this project, i had to build a website where you can check the weather for different locations. it was built in pure javascript and is still running perfectly. It was one of the first projects that i did for an internship.
                 </p>
-                <a href='https://weather-app-example.netlify.app' target="_blank" rel="noopener noreferrer">
-                  <img src={Weatherapp} alt="Weather Application" />
+                <a href='https://resplendent-bubblegum-8e8dac.netlify.app' target="_blank" rel="noopener noreferrer">
+                <img src={Weatherapp} alt="Weather Application" />
                 </a>
               </>
             )}
@@ -195,9 +195,9 @@ function App() {
           >
             <h3 className="text-2xl font-sans mb-4">Weather Application</h3>
             <p className="text-lg font-sans">
-              <span className='font-bold'>In</span> this project, i had to build a website where you can check the weather for different locations. it was built in pure javascript and is still running perfectly. It was one of the first projects that i did for an internship.
+              <span className='font-bold'>In</span> this project, i have build a website where you can check the weather for different locations. it was built in the javascript framework Vue.JS. It was one of the first projects that i did on my own in my free time.
             </p>
-            <a href='https://weather-app-example.netlify.app' target="_blank" rel="noopener noreferrer">
+            <a href='https://resplendent-bubblegum-8e8dac.netlify.app' target="_blank" rel="noopener noreferrer">
               <img src={Weatherapp} alt="Weather Application" />
             </a>
           </div>
@@ -205,15 +205,18 @@ function App() {
       </div>
 
       {/* Lifeline Section */}
-      <div className="px-6 md:px-12 py-16 md:py-24">
+      <div className="px-6 md:px-12md:py-24">
         <Lifeline />
       </div>
       {/* Contact Form Section */}
-      <div className="px-6 md:px-12 py-16 md:py-24">
+      <div className="px-6 md:px-12 md:py-24 reveal">
         <ContactForm />
       </div>
       {/* Footer */}
-      <Footer />
+      <div className='reveal'>
+        <Footer />
+      </div>
+      
       
       {/* Modal */}
       <Modal show={showModal} onClose={closeModal} content={modalContent} />
