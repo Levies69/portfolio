@@ -48,7 +48,6 @@ function Modal({ show, onClose, content }) {
   );
 }
 
-
 const texts = ['Software Developer', 'Web Developer', 'Life Enjoyer'];
 const colors = ['text-red-600', 'text-blue-600', 'text-yellow-600'];
 
@@ -81,7 +80,6 @@ function App() {
       opacity: 0,
     });
   }, []); // No dependencies needed
-  ;
 
   const [currentText, setCurrentText] = useState(texts[0]);
   const [currentColor, setCurrentColor] = useState(colors[0]);
@@ -100,7 +98,7 @@ function App() {
     }, 2500); // Change text every 3 seconds
   
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [texts, colors]); // Include texts and colors if they are dynamic
+  }, []); // Removed texts and colors from dependencies
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} transition-colors duration-300`}>
@@ -206,14 +204,12 @@ function App() {
         </div>
       </div>
 
-      
-
       {/* Lifeline Section */}
       <div className="px-6 md:px-12 py-16 md:py-24">
         <Lifeline />
       </div>
-{/* Contact Form Section */}
-<div className="px-6 md:px-12 py-16 md:py-24">
+      {/* Contact Form Section */}
+      <div className="px-6 md:px-12 py-16 md:py-24">
         <ContactForm />
       </div>
       {/* Footer */}
